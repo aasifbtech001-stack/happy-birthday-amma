@@ -1,126 +1,557 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="theme-color" content="#7b2cbf">
-  <title>Happy Birthday Amma ❤️</title>
-  <link rel="stylesheet" href="style.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Happy Birthday Amma ❤️</title>
+
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: "Segoe UI", sans-serif;
+            background:
+                radial-gradient(circle at 10% 20%, rgba(255, 182, 193, 0.25), transparent 25%),
+                radial-gradient(circle at 90% 30%, rgba(216, 180, 254, 0.3), transparent 25%),
+                linear-gradient(135deg, #fff4fc, #f5eaff);
+            color: #35145f;
+            min-height: 100vh;
+        }
+
+        /* Floating decorations */
+
+        .decoration {
+            position: fixed;
+            font-size: 28px;
+            pointer-events: none;
+            z-index: 0;
+            opacity: 0.8;
+            animation: float 5s ease-in-out infinite;
+        }
+
+        .d1 { top: 8%; left: 7%; }
+        .d2 { top: 20%; right: 8%; animation-delay: 1s; }
+        .d3 { top: 55%; left: 4%; animation-delay: 2s; }
+        .d4 { bottom: 15%; right: 7%; animation-delay: 3s; }
+        .d5 { bottom: 5%; left: 15%; animation-delay: 1.5s; }
+
+        @keyframes float {
+            0%, 100% {
+                transform: translateY(0) rotate(0deg);
+            }
+
+            50% {
+                transform: translateY(-15px) rotate(8deg);
+            }
+        }
+
+        /* Hero */
+
+        .hero {
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            padding: 40px 20px;
+            position: relative;
+            z-index: 1;
+        }
+
+        .hero-content {
+            max-width: 900px;
+        }
+
+        .small-text {
+            font-size: 20px;
+            color: #8d649e;
+            margin-bottom: 15px;
+        }
+
+        h1 {
+            font-family: Georgia, serif;
+            font-size: clamp(55px, 10vw, 105px);
+            line-height: 0.95;
+            color: #35145f;
+            margin-bottom: 25px;
+        }
+
+        .name {
+            font-size: clamp(28px, 5vw, 48px);
+            font-weight: 600;
+            color: #b04488;
+            margin-bottom: 15px;
+        }
+
+        .dob {
+            font-size: 18px;
+            color: #76587f;
+            margin-bottom: 30px;
+        }
+
+        .message {
+            font-size: 21px;
+            line-height: 1.7;
+            max-width: 700px;
+            margin: auto;
+            color: #61466b;
+        }
+
+        .heart {
+            font-size: 50px;
+            margin-top: 25px;
+            animation: heartbeat 1.5s infinite;
+        }
+
+        @keyframes heartbeat {
+            0%, 100% {
+                transform: scale(1);
+            }
+
+            50% {
+                transform: scale(1.2);
+            }
+        }
+
+        /* Gallery */
+
+        .gallery-section {
+            position: relative;
+            z-index: 1;
+            padding: 80px 5%;
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 50px;
+        }
+
+        .section-title h2 {
+            font-family: Georgia, serif;
+            font-size: clamp(42px, 6vw, 72px);
+            color: #35145f;
+            margin-bottom: 12px;
+        }
+
+        .section-title p {
+            font-size: 18px;
+            color: #78627d;
+        }
+
+        .gallery {
+            max-width: 1250px;
+            margin: auto;
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 28px;
+        }
+
+        .memory-card {
+            background: rgba(255, 255, 255, 0.9);
+            border-radius: 25px;
+            overflow: hidden;
+            box-shadow: 0 15px 35px rgba(75, 30, 100, 0.12);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .memory-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 22px 45px rgba(75, 30, 100, 0.2);
+        }
+
+        .memory-card img {
+            width: 100%;
+            height: 330px;
+            object-fit: cover;
+            display: block;
+            background: #f5eef8;
+        }
+
+        .memory-info {
+            padding: 20px;
+            text-align: center;
+        }
+
+        .memory-info h3 {
+            font-size: 20px;
+            color: #3d205a;
+            margin-bottom: 8px;
+        }
+
+        .memory-info p {
+            color: #846b8d;
+            font-size: 14px;
+        }
+
+        /* Birthday message */
+
+        .love-section {
+            position: relative;
+            z-index: 1;
+            padding: 80px 20px;
+        }
+
+        .love-box {
+            max-width: 900px;
+            margin: auto;
+            background: rgba(255, 255, 255, 0.85);
+            padding: 55px;
+            border-radius: 30px;
+            text-align: center;
+            box-shadow: 0 20px 50px rgba(80, 35, 100, 0.12);
+        }
+
+        .love-box h2 {
+            font-family: Georgia, serif;
+            font-size: 48px;
+            margin-bottom: 25px;
+            color: #35145f;
+        }
+
+        .love-box p {
+            font-size: 20px;
+            line-height: 1.8;
+            color: #604a69;
+        }
+
+        /* Footer */
+
+        footer {
+            text-align: center;
+            padding: 50px 20px;
+            color: #76587f;
+            font-size: 16px;
+        }
+
+        footer .big-heart {
+            font-size: 35px;
+            margin-bottom: 10px;
+        }
+
+        /* Mobile */
+
+        @media (max-width: 900px) {
+            .gallery {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        @media (max-width: 600px) {
+            .gallery {
+                grid-template-columns: 1fr;
+            }
+
+            .memory-card img {
+                height: 300px;
+            }
+
+            .love-box {
+                padding: 30px 20px;
+            }
+
+            .love-box h2 {
+                font-size: 36px;
+            }
+
+            .love-box p {
+                font-size: 17px;
+            }
+
+            .message {
+                font-size: 18px;
+            }
+        }
+    </style>
 </head>
+
 <body>
-  <div class="stars"></div>
-  <div class="petals" aria-hidden="true"></div>
 
-  <main>
+    <!-- Floating decorations -->
+    <div class="decoration d1">🌹</div>
+    <div class="decoration d2">🌸</div>
+    <div class="decoration d3">💗</div>
+    <div class="decoration d4">🌷</div>
+    <div class="decoration d5">✨</div>
+
+    <!-- Hero -->
     <section class="hero">
-      <div class="hero-glow"></div>
-      <div class="small-label">A little birthday surprise, made with love</div>
-      <h1>Happy Birthday,<br><span>Amma</span> ❤️</h1>
-      <p class="hero-sub">To the woman whose love makes our family feel like home.</p>
-      <div class="birthday-facts" aria-label="Amma birthday details">
-        <span>🎂 41 Years</span>
-        <span>📅 01 September 1985</span>
-        <span>💖 Forever Loved</span>
-      </div>
-      <button class="primary-btn" id="openBtn">Open Your Surprise 🎁</button>
-      <div class="scroll-hint">↓ keep scrolling, Amma</div>
+
+        <div class="hero-content">
+
+            <div class="small-text">
+                🎂 A very special day 🎂
+            </div>
+
+            <h1>
+                Happy Birthday
+            </h1>
+
+            <div class="name">
+                Amma ❤️
+            </div>
+
+            <div class="dob">
+                Born on 01 September 1985
+            </div>
+
+            <p class="message">
+                To the most wonderful Amma in the world,
+                thank you for filling our lives with love,
+                happiness, care and countless beautiful memories.
+                <br><br>
+                Today is all about celebrating <b>you</b>. 🌸
+            </p>
+
+            <div class="heart">
+                ❤️
+            </div>
+
+        </div>
+
     </section>
 
-    <section class="reveal" id="surprise">
-      <div class="section-tag">For You, Amma</div>
-      <div class="birthday-badge">Born on 01 September 1985 • Celebrating 41 beautiful years ✨</div>
-      <h2>You deserve a day as beautiful as your heart. 🌷</h2>
-      <p>
-        Happy Birthday, Amma! Thank you for every prayer, every sacrifice,
-        every little act of love, and every moment you've stood beside us.
-        Your kindness, strength and love have shaped our lives in ways words
-        can never fully explain.
-      </p>
-      <p class="signature">With all my love,<br><strong>Your son ❤️</strong></p>
-    </section>
 
-    <section class="cake-section">
-      <div class="section-tag">Make a Wish</div>
-      <h2>A birthday wish just for you 🎂</h2>
-      <div class="cake-wrap realistic-cake-wrap" aria-label="A realistic birthday cake for Amma">
-        <div class="cake-shadow"></div>
-        <div class="cake-plate"></div>
-        <div class="cake-tier cake-tier-bottom">
-          <div class="cake-frosting-drip"></div>
-          <div class="cake-cream-band"></div>
-          <div class="cake-sprinkles">✦ • ✦ • ✦ • ✦</div>
-        </div>
-        <div class="cake-tier cake-tier-top">
-          <div class="cake-frosting-drip top-drip"></div>
-          <div class="cake-cream-band"></div>
-          <div class="cake-writing">Happy Birthday Amma</div>
-        </div>
-        <div class="cake-candles-real">
-          <div class="real-candle candle-one"><span class="wick"></span><span class="real-flame" id="flame"></span></div>
-          <div class="real-candle candle-two"><span class="wick"></span><span class="real-flame"></span></div>
-          <div class="real-candle candle-three"><span class="wick"></span><span class="real-flame"></span></div>
-        </div>
-        <div class="cake-decor decor-one">●</div>
-        <div class="cake-decor decor-two">●</div>
-        <div class="cake-decor decor-three">●</div>
-      </div>
-      <button class="wish-btn" id="wishBtn">Tap to blow the candle ✨</button>
-      <p id="wishText" class="wish-text"></p>
-    </section>
+    <!-- Memories -->
 
     <section class="gallery-section">
-      <div class="section-tag">Our Memories</div>
-      <h2>Beautiful moments together 📸</h2>
-      <p class="section-intro">A few memories that deserve to stay forever.</p>
-      <div class="gallery">
-        <figure class="photo-card tall"><img src="images/photo1.jpg" alt="Family memory"></figure>
-        <figure class="photo-card"><img src="images/photo2.jpg" alt="Aisha and family"></figure>
-        <figure class="photo-card"><img src="images/photo3.jpg" alt="Family memory"></figure>
-        <figure class="photo-card tall"><img src="images/photo4.jpg" alt="Aisha and father"></figure>
-        <figure class="photo-card"><img src="images/photo5.jpg" alt="Aisha and father"></figure>
-        <figure class="photo-card"><img src="images/photo6.jpg" alt="Aisha and father"></figure>
-        <figure class="photo-card"><img src="images/photo7.jpg" alt="Family memory"></figure>
-        <figure class="photo-card tall"><img src="images/photo8.jpg" alt="Aisha and father"></figure>
-        <figure class="photo-card"><img src="images/photo9.jpg" alt="Family memory"></figure>
-        <figure class="photo-card"><img src="images/photo10.jpg" alt="Family memory"></figure>
-      </div>
+
+        <div class="section-title">
+
+            <h2>
+                Beautiful moments together
+            </h2>
+
+            <p>
+                A few memories that deserve to stay forever. 🌷
+            </p>
+
+        </div>
+
+
+        <div class="gallery">
+
+            <!-- PHOTO 1 -->
+            <div class="memory-card">
+
+                <img
+                    src="./photo1.jpg"
+                    alt="Family memory"
+                    loading="lazy"
+                >
+
+                <div class="memory-info">
+                    <h3>Family memory</h3>
+                    <p>A beautiful moment together ❤️</p>
+                </div>
+
+            </div>
+
+
+            <!-- PHOTO 2 -->
+            <div class="memory-card">
+
+                <img
+                    src="./photo2.jpg"
+                    alt="Amma and family"
+                    loading="lazy"
+                >
+
+                <div class="memory-info">
+                    <h3>Amma and family</h3>
+                    <p>Memories filled with love 🌸</p>
+                </div>
+
+            </div>
+
+
+            <!-- PHOTO 3 -->
+            <div class="memory-card">
+
+                <img
+                    src="./photo3.jpg"
+                    alt="Family memory"
+                    loading="lazy"
+                >
+
+                <div class="memory-info">
+                    <h3>Family memory</h3>
+                    <p>A moment to remember forever 💕</p>
+                </div>
+
+            </div>
+
+
+            <!-- PHOTO 4 -->
+            <div class="memory-card">
+
+                <img
+                    src="./photo4.jpg"
+                    alt="Amma and father"
+                    loading="lazy"
+                >
+
+                <div class="memory-info">
+                    <h3>Amma and father</h3>
+                    <p>A beautiful family moment ❤️</p>
+                </div>
+
+            </div>
+
+
+            <!-- PHOTO 5 -->
+            <div class="memory-card">
+
+                <img
+                    src="./photo5.jpg"
+                    alt="Amma and father"
+                    loading="lazy"
+                >
+
+                <div class="memory-info">
+                    <h3>Amma and father</h3>
+                    <p>A precious memory 🌷</p>
+                </div>
+
+            </div>
+
+
+            <!-- PHOTO 6 -->
+            <div class="memory-card">
+
+                <img
+                    src="./photo6.jpg"
+                    alt="Amma and father"
+                    loading="lazy"
+                >
+
+                <div class="memory-info">
+                    <h3>Amma and father</h3>
+                    <p>Love captured in a moment 💗</p>
+                </div>
+
+            </div>
+
+
+            <!-- PHOTO 7 -->
+            <div class="memory-card">
+
+                <img
+                    src="./photo7.jpg"
+                    alt="Family memory"
+                    loading="lazy"
+                >
+
+                <div class="memory-info">
+                    <h3>Family memory</h3>
+                    <p>One more beautiful memory ✨</p>
+                </div>
+
+            </div>
+
+
+            <!-- PHOTO 8 -->
+            <div class="memory-card">
+
+                <img
+                    src="./photo8.jpg"
+                    alt="Beautiful family memory"
+                    loading="lazy"
+                >
+
+                <div class="memory-info">
+                    <h3>Beautiful memory</h3>
+                    <p>A memory close to our hearts ❤️</p>
+                </div>
+
+            </div>
+
+
+            <!-- PHOTO 9 -->
+            <div class="memory-card">
+
+                <img
+                    src="./photo9.jpg"
+                    alt="Family memory"
+                    loading="lazy"
+                >
+
+                <div class="memory-info">
+                    <h3>Family memory</h3>
+                    <p>Moments we will always treasure 🌸</p>
+                </div>
+
+            </div>
+
+
+            <!-- PHOTO 10 -->
+            <div class="memory-card">
+
+                <img
+                    src="./photo10.jpg"
+                    alt="Special family memory"
+                    loading="lazy"
+                >
+
+                <div class="memory-info">
+                    <h3>Special memory</h3>
+                    <p>Forever in our hearts 💕</p>
+                </div>
+
+            </div>
+
+        </div>
+
     </section>
 
-    <section class="love-letter">
-      <div class="letter-card">
-        <div class="heart">♥</div>
-        <div class="section-tag">A Letter For Amma</div>
-        <h2>Dear Amma,</h2>
-        <p>
-          There are many things I could wish for you today — happiness,
-          good health, peace, beautiful memories and many more birthdays.
-          But above everything, I wish that you always know how deeply you
-          are loved.
-        </p>
-        <p>
-          You are one of the biggest blessings in our lives. No matter how
-          old we grow, a mother's love remains the place our hearts return to.
-          Thank you for being you.
-        </p>
-        <p class="final-line">May every year ahead bring you more reasons to smile. 🌸</p>
-        <div class="forever">LOVE YOU, AMMA ❤️</div>
-      </div>
+
+    <!-- Birthday message -->
+
+    <section class="love-section">
+
+        <div class="love-box">
+
+            <h2>
+                Dear Amma ❤️
+            </h2>
+
+            <p>
+                You are one of the most precious people in our lives.
+                Every sacrifice, every smile, every little thing you do
+                means more than words can explain.
+                <br><br>
+
+                May this birthday bring you endless happiness,
+                good health, peace and many more beautiful memories.
+                <br><br>
+
+                <b>Happy Birthday, Amma! 🎂🌹❤️</b>
+            </p>
+
+        </div>
+
     </section>
 
-    <section class="finale">
-      <div class="firework">✦</div>
-      <h2>Happy Birthday, Amma! 🎉</h2>
-      <p>Today is your day. Smile, enjoy, and let yourself be celebrated. ❤️</p>
-      <button class="music-btn" id="musicBtn">♫ Play a tiny birthday tune</button>
-      <div class="footer-note">Made with love • 01 September 1985 → 41 beautiful years ❤️</div>
-    </section>
-  </main>
 
-  <div class="modal" id="photoModal">
-    <button class="close" id="closeModal">×</button>
-    <img id="modalImg" src="" alt="Memory">
-  </div>
+    <!-- Footer -->
 
-  <script src="script.js"></script>
+    <footer>
+
+        <div class="big-heart">
+            ❤️
+        </div>
+
+        Made with love for Amma
+
+        <br>
+
+        🎂 01 September 1985 🎂
+
+    </footer>
+
 </body>
 </html>

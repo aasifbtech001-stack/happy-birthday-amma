@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#7b2cbf">
+  <title>Happy Birthday Amma ❤️</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="stars"></div>
+  <div class="petals" aria-hidden="true"></div>
+
+  <main>
+    <section class="hero">
+      <div class="hero-glow"></div>
+      <div class="small-label">A little birthday surprise, made with love</div>
+      <h1>Happy Birthday,<br><span>Amma</span> ❤️</h1>
+      <p class="hero-sub">To the woman whose love makes our family feel like home.</p>
+      <div class="birthday-facts" aria-label="Amma birthday details">
+        <span>🎂 41 Years</span>
+        <span>📅 01 September 1985</span>
+        <span>💖 Forever Loved</span>
+      </div>
+      <button class="primary-btn" id="openBtn">Open Your Surprise 🎁</button>
+      <div class="scroll-hint">↓ keep scrolling, Amma</div>
+    </section>
+
+    <section class="reveal" id="surprise">
+      <div class="section-tag">For You, Amma</div>
+      <div class="birthday-badge">Born on 01 September 1985 • Celebrating 41 beautiful years ✨</div>
+      <h2>You deserve a day as beautiful as your heart. 🌷</h2>
+      <p>
+        Happy Birthday, Amma! Thank you for every prayer, every sacrifice,
+        every little act of love, and every moment you've stood beside us.
+        Your kindness, strength and love have shaped our lives in ways words
+        can never fully explain.
+      </p>
+      <p class="signature">With all my love,<br><strong>Your son ❤️</strong></p>
+    </section>
+
+    <section class="cake-section">
+      <div class="section-tag">Make a Wish</div>
+      <h2>A birthday wish just for you 🎂</h2>
+      <div class="cake-wrap realistic-cake-wrap" aria-label="A realistic birthday cake for Amma">
+        <div class="cake-shadow"></div>
+        <div class="cake-plate"></div>
+        <div class="cake-tier cake-tier-bottom">
+          <div class="cake-frosting-drip"></div>
+          <div class="cake-cream-band"></div>
+          <div class="cake-sprinkles">✦ • ✦ • ✦ • ✦</div>
+        </div>
+        <div class="cake-tier cake-tier-top">
+          <div class="cake-frosting-drip top-drip"></div>
+          <div class="cake-cream-band"></div>
+          <div class="cake-writing">Happy Birthday Amma</div>
+        </div>
+        <div class="cake-candles-real">
+          <div class="real-candle candle-one"><span class="wick"></span><span class="real-flame" id="flame"></span></div>
+          <div class="real-candle candle-two"><span class="wick"></span><span class="real-flame"></span></div>
+          <div class="real-candle candle-three"><span class="wick"></span><span class="real-flame"></span></div>
+        </div>
+        <div class="cake-decor decor-one">●</div>
+        <div class="cake-decor decor-two">●</div>
+        <div class="cake-decor decor-three">●</div>
+      </div>
+      <button class="wish-btn" id="wishBtn">Tap to blow the candle ✨</button>
+      <p id="wishText" class="wish-text"></p>
+    </section>
+
+    <section class="gallery-section">
+      <div class="section-tag">Our Memories</div>
+      <h2>Beautiful moments together 📸</h2>
+      <p class="section-intro">A few memories that deserve to stay forever.</p>
+      <div class="gallery">
+        <figure class="photo-card tall"><img src="images/photo1.jpg" alt="Family memory"></figure>
+        <figure class="photo-card"><img src="images/photo2.jpg" alt="Aisha and family"></figure>
+        <figure class="photo-card"><img src="images/photo3.jpg" alt="Family memory"></figure>
+        <figure class="photo-card tall"><img src="images/photo4.jpg" alt="Aisha and father"></figure>
+        <figure class="photo-card"><img src="images/photo5.jpg" alt="Aisha and father"></figure>
+        <figure class="photo-card"><img src="images/photo6.jpg" alt="Aisha and father"></figure>
+        <figure class="photo-card"><img src="images/photo7.jpg" alt="Family memory"></figure>
+        <figure class="photo-card tall"><img src="images/photo8.jpg" alt="Aisha and father"></figure>
+        <figure class="photo-card"><img src="images/photo9.jpg" alt="Family memory"></figure>
+        <figure class="photo-card"><img src="images/photo10.jpg" alt="Family memory"></figure>
+      </div>
+    </section>
+
+    <section class="love-letter">
+      <div class="letter-card">
+        <div class="heart">♥</div>
+        <div class="section-tag">A Letter For Amma</div>
+        <h2>Dear Amma,</h2>
+        <p>
+          There are many things I could wish for you today — happiness,
+          good health, peace, beautiful memories and many more birthdays.
+          But above everything, I wish that you always know how deeply you
+          are loved.
+        </p>
+        <p>
+          You are one of the biggest blessings in our lives. No matter how
+          old we grow, a mother's love remains the place our hearts return to.
+          Thank you for being you.
+        </p>
+        <p class="final-line">May every year ahead bring you more reasons to smile. 🌸</p>
+        <div class="forever">LOVE YOU, AMMA ❤️</div>
+      </div>
+    </section>
+
+    <section class="finale">
+      <div class="firework">✦</div>
+      <h2>Happy Birthday, Amma! 🎉</h2>
+      <p>Today is your day. Smile, enjoy, and let yourself be celebrated. ❤️</p>
+      <button class="music-btn" id="musicBtn">♫ Play a tiny birthday tune</button>
+      <div class="footer-note">Made with love • 01 September 1985 → 41 beautiful years ❤️</div>
+    </section>
+  </main>
+
+  <div class="modal" id="photoModal">
+    <button class="close" id="closeModal">×</button>
+    <img id="modalImg" src="" alt="Memory">
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
